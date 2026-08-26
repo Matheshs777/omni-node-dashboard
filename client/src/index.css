@@ -1,0 +1,39 @@
+/*
+ * OMNI-NODE / Light Industrial Enterprise Dashboard
+ * Fixed-viewport B2B instrument surface: slate field, white cards, precise lines, and semantic signal color.
+ */
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+@theme inline { --radius-sm: calc(var(--radius) - 4px); --radius-md: calc(var(--radius) - 2px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px); --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-border: var(--border); }
+:root { --radius: 0.75rem; --background: #f1f5f9; --foreground: #0f172a; --card: #ffffff; --card-foreground: #0f172a; --primary: #06b6d4; --primary-foreground: #ffffff; --border: #e2e8f0; }
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; min-height: 0; overflow: hidden; }
+html, body { overflow: hidden; }
+body { margin: 0; min-width: 320px; background: #f1f5f9; color: #0f172a; font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+button, input, select, textarea { font: inherit; }
+.app-surface { background: linear-gradient(180deg, #f8fafc, #f1f5f9); }
+.metric-card { border: 1px solid #f1f5f9; border-radius: 0.75rem; background: #ffffff; box-shadow: 0 2px 8px -3px rgba(0,0,0,0.05); transition: box-shadow 300ms ease, transform 300ms ease, border-color 300ms ease; }
+.metric-card:hover { border-color: #e2e8f0; box-shadow: 0 7px 16px -7px rgba(15,23,42,0.16); transform: translateY(-1px); }
+.metric-card::before { content: ""; position: absolute; top: 0; left: 0.8rem; width: 2.25rem; height: 2px; background: #cbd5e1; }
+.workspace-card { position: relative; min-width: 0; min-height: 0; overflow: hidden; border: 1px solid #f1f5f9; border-radius: 0.75rem; background: #ffffff; box-shadow: 0 2px 8px -3px rgba(0,0,0,0.05); }
+.workspace-card::before { content: ""; position: absolute; top: 0; left: 0.9rem; width: 3.2rem; height: 2px; background: #cbd5e1; }
+.app-surface button:not(:disabled) { transition: background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease; }
+.app-surface button:not(:disabled):hover { box-shadow: 0 7px 15px -6px rgba(8,145,178,0.32); transform: translateY(-2px); }
+@media (min-width: 768px) { .metric-card { align-items: flex-start; } .metric-card > span:first-child { margin-top: 0.22rem; } .metric-card > div:nth-child(2) { align-self: stretch; display: flex; flex-direction: column; gap: 0.2rem; } }
+.safety-path i { width: 0.4rem; height: 1px; background: #cbd5e1; position: relative; }
+.safety-path i::after { content: ""; position: absolute; right: -1px; top: -1.5px; width: 4px; height: 4px; border-top: 1px solid #94a3b8; border-right: 1px solid #94a3b8; transform: rotate(45deg); }
+.safety-card .safety-path { width: max-content; border: 1px solid #e2e8f0; background: #f8fafc; padding: 0.28rem 0.4rem; color: #64748b; }
+@media (max-width: 1023px) { .metric-card, .workspace-card, .safety-card { border-radius: 0.35rem; box-shadow: 0 1px 2px rgba(15,23,42,0.04); } .workspace-card::before { width: 2rem; background: #94a3b8; } }
+@media (max-width: 767px) {
+  .app-surface > section:nth-of-type(2) > article.workspace-card { height: 13rem !important; }
+  .app-surface > section:nth-of-type(2) > div.order-2 { min-height: 0; }
+  .app-surface > section:nth-of-type(2) > div.order-2 .h-16 { height: 3.5rem !important; }
+  .telemetry-instrument > section { position: relative; background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(148,163,184,0.08) 20px, rgba(148,163,184,0.08) 21px); }
+  .telemetry-instrument > section::after { content: "LIVE / 1kHz"; position: absolute; right: 0.35rem; bottom: 0.3rem; color: #94a3b8; font: 700 6px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.06em; }
+  .safety-card::after { content: "EDGE PROTECTION / READY"; position: absolute; right: 0.35rem; bottom: 0.35rem; color: #94a3b8; font: 700 6px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.05em; }
+  .app-surface > header > div:first-child p:first-child { display: flex; align-items: center; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .app-surface > header > div:first-child p:first-child::before { content: "◉"; margin-right: 0.18rem; color: #0f172a; font-size: 0.6em; }
+  .app-surface > header > div:first-child p:first-child::after { content: "SIGNAL"; margin-left: 0.35rem; padding-left: 0.35rem; border-left: 1px solid #cbd5e1; color: #64748b; font-size: 0.38em; font-weight: 800; letter-spacing: 0.1em; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
