@@ -1,5 +1,7 @@
 <div align="center">
   <img src="client/public/logo.jpeg" alt="Omni-Node Logo" width="120" />
+  <br />
+  <img src="docs/dashboard-preview.png" alt="OMNI-NODE Dashboard Preview" width="800" />
   <h1>OMNI-NODE – Industrial Intelligence</h1>
   <p>Edge-AI machine insight and spindle protection for high-mix, low-volume manufacturing.</p>
   <p>
@@ -20,9 +22,7 @@ This repository currently provides a responsive spindle-monitoring interface and
 
 ## Dashboard Preview
 
-![OMNI-NODE Dashboard Preview](docs/dashboard-preview.png)
-
-*Operator workspace preview: a 3D spindle digital twin, tri-axial vibration telemetry, and safety-path panels. To add a live capture, run the dashboard locally, take a screenshot, and save it as `docs/dashboard-preview.png` (create the `docs/` directory if needed).*
+The operator-interface screenshot is displayed in the centered header immediately after the logo. It shows the 3D spindle digital twin, tri-axial vibration telemetry, and safety-path panels. To refresh it, run the dashboard locally, capture the running interface, and replace `docs/dashboard-preview.png`.
 
 ## System Architecture
 
@@ -263,6 +263,8 @@ omni-node-dashboard/
 │       └── pages/
 │           ├── Home.tsx
 │           └── NotFound.tsx
+├── docs/
+│   └── dashboard-preview.png
 ├── patches/
 │   └── wouter@3.7.1.patch
 ├── server/
