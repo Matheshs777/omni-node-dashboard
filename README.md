@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="client/public/logo.jpeg" alt="Omni-Node Logo" width="120" />
+  <img src="client/public/logo.jpeg" alt="Omni-Node Logo" width="220" />
   <br />
   <img src="docs/dashboard-preview.png" alt="OMNI-NODE Dashboard Preview" width="800" />
   <h1>OMNI-NODE – Industrial Intelligence</h1>
